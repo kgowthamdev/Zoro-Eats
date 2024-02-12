@@ -5,6 +5,16 @@ module.exports = {
     
   ],
   theme: {
+    screens: {
+      'sm': '400px',
+     
+
+      'md': '800px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       fontFamily:{
         serif:[ 'Playfair Display', 'serif'],
