@@ -1,6 +1,18 @@
 import React from "react"
 import  ReactDOM  from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
-const heading=<p className="text-5xl text-red-900">zoro Eat's name is inspired from the anime onepice. tailwind CSS is properly installed and react js is properly configured</p>
+const AppLayout = ()=>{
+    return(
+       
+        <div>
+            <Header/>
+             <Body/>
+        
+        </div>
+
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading)
+root.render(<AppLayout/>)

@@ -5,7 +5,14 @@ module.exports = {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        serif:[ 'Playfair Display', 'serif'],
+        sans: ['Roboto Serif', 'serif'],
+      
+        },
+    },
+    
   },
   plugins: [],
 }
