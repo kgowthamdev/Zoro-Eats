@@ -12,7 +12,7 @@ const RestCards =(props)=>
     const{resdata}= props;
 
 
-    const{name,cloudinaryImageId,costForTwo,cuisines,avgRating,sla,areaName}= resdata?.info
+    const{name,cloudinaryImageId,costForTwo,cuisines,avgRating,sla,areaName}= resdata.info
    
     const deliveryTime = sla?.deliveryTime;
     
