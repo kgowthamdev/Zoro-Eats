@@ -8,6 +8,7 @@ const RestCards =(props)=>
 
 {
    
+    
     // deliveryTime
     const{resdata}= props;
 
@@ -19,7 +20,7 @@ const RestCards =(props)=>
     
     
   return( <div id="Global_div" className="p-10  ">
-        <div className="flex flex-col space-y-3 w-[300px] h-52   hover:scale-95 transition duration-150 ease-in-out mt-16">
+        <div className="flex flex-col space-y-3 w-[300px] h-52   hover:scale-95 transition duration-150 ease-in-out mt-16 ">
             
         <img src={IMG_URL+ cloudinaryImageId} className=" rounded-xl h-52"></img>
         <div className="flex space-x-3  pt-3">

@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../utli/logo_url";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Header =()=>{
@@ -12,10 +13,10 @@ const Header =()=>{
        <div className="hidden md:block">
        <div className="font-sans font-bold  p-8 flex space-x-5 ">
         <div className="flex space-x-6 mt-2">
-        <div>Home</div>
-        <div>About us</div>
-        <div>Contact us</div>
-        <div>Order Now</div>
+        <div><Link to="/">Home</Link></div>
+        <div><Link to="/aboutus">About us</Link></div>
+        <div><Link to="/contactus">Contact us</Link></div>
+        <div><Link to="/ordernow">Order Now</Link></div>
         </div>
          <div className="bg-[#FF6868]  py-2 px-4 rounded-md hover:text-white  hover:scale-105 cursor-pointer"
          onClick={()=>login=== "login"?setlogin("logout"):setlogin("login")}>{login}</div>
