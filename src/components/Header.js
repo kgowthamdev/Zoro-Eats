@@ -8,8 +8,8 @@ const Header =()=>{
 
     return(
         
-        <div className="flex justify-between   p-10 pt-5 pb-0 bg-[#D7E4C0]">
-       <img src={LOGO_URL} className="w-24 h-24 rounded-full "></img>
+        <div className="flex justify-between   p-8  pt-5 pb-0 bg-[#D7E4C0]">
+       <img src={LOGO_URL} className="w-20 h-20 rounded-full "></img>
        <div className="hidden md:block">
        <div className="font-sans font-bold  p-8 flex space-x-5 ">
         <div className="flex space-x-6 mt-2">

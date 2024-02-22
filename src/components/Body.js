@@ -27,12 +27,17 @@ setfilter(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaur
 
 
   }
+    
+ 
 
   return ListData.length===0?(<Shimmer/>):
+
+  
   
    (
     // global div
     <div>
+      
       <div className="flex justify-center items-center flex-col  md:flex-row mt-10">
         {/* search */}
 
