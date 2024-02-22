@@ -115,7 +115,7 @@ const CardsItems = () => {
           src={CARDIMG_URL + imageId}
           className="h-48 w-48 rounded-xl mb-8 md:mb-0"
         ></img>
-        <div className="ml-12 space-y-2 flex flex-col  items-center md:items-start">
+        <div className="md:ml-12 space-y-2 flex flex-col  items-center md:items-start">
             <h1  className="font-bold ">   {name}</h1>
           
             <p className="max-w-xl line-clamp-2">{description}</p>
