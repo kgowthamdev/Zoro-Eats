@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
 import { Side_API } from "../utli/logo_url";
 import { useParams } from "react-router-dom";
 import { IMG_URL,CARDIMG_URL } from "../utli/logo_url";
