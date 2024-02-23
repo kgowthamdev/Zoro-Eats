@@ -52,16 +52,16 @@ const CardsItems = () => {
   // console.log(itemCards)
 
   return (
-    <div className="p-20 ">
+    <div className="p-10 md:p-20 ">
       <div id=" global_div" className="flex flex-col md:flex-row justify-center items-center  md:space-x-8">
         <img
           src={IMG_URL + cloudinaryImageId}
           className="h-60 w-full md:h-96 md:w-1/2 rounded-xl"
         ></img>
-        <div className="p-10 pt-0 space-y-2 mt-3 font-sans min-w-[40%]">
+        <div className="p-10 pt-0 space-y-2 mt-3 font-sans min-w-[40%] text-center md:text-left ">
 
-          <h2 className=" text-2xl md:text-3xl font-bold ">{name}</h2>
-          <div className="md:pt-8 space-y-3">
+          <h2 className=" text-2xl md:text-3xl font-bold mt-4 md:mt-0">{name}</h2>
+          <div className="md:pt-8 space-y-3 md:mt-0 text-center md:text-left">
           <h3 className="text-md md:text-xl">
             <span className="text-sm text-gray-600">cuisines: </span>
             {cuisines.join(", ")}
@@ -74,7 +74,7 @@ const CardsItems = () => {
             <FontAwesomeIcon
               className="mt-1 mr-1"
               icon={faStar}
-              style={{ color: "#FFD43B" }}
+              style={{color: "#FFD43B" }}
             />
             {avgRating+ " "}<span className="text-sm font-normal " >{"( "+totalRatingsString+" )"}</span>
           </h4>
@@ -112,12 +112,12 @@ const CardsItems = () => {
             <div key={item?.card?.info?.id} className="flex  flex-col md:flex-row justify-center items-center md:justify-start mt-16">
                <img
           src={CARDIMG_URL + imageId}
-          className="h-48 w-48 rounded-xl mb-8 md:mb-0"
+          className="h-48 w-60 rounded-xl mb-8 md:mb-0"
         ></img>
         <div className="md:ml-12 space-y-2 flex flex-col  items-center md:items-start">
-            <h1  className="font-bold ">   {name}</h1>
+            <h1  className="font-medium md:font-bold">   {name}</h1>
           
-            <p className="max-w-xl line-clamp-2">{description}</p>
+            <p className="md:w-xl line-clamp-2 w-48 ">{description}</p>
             <h1 className="font-medium">PURE{" "+vegClassifier}</h1>
            {defaultPrice&& (<h1 className="font-bold">₹{" "+defaultPrice/100} <span className="font-normal">only</span></h1>)}
             <button className="bg-[#FF6868] font-bold py-2 px-4 rounded-md hover:text-white  hover:scale-105 cursor-pointer">

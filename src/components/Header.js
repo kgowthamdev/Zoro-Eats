@@ -8,12 +8,12 @@ const Header =()=>{
 
     return(
         
-        <div className="flex justify-between   p-8  pt-5 pb-0 bg-[#D7E4C0]">
-       <img src={LOGO_URL} className="w-20 h-20 rounded-full "></img>
+        <div className="flex justify-between   p-3 md:p-8   md:pt-5 md:pb-0 bg-[#D7E4C0]">
+       <img src={LOGO_URL} className="w-16 h-16 md:w-20 md:h-20 rounded-full "></img>
        <div className="hidden md:block">
        <div className="font-sans font-bold  p-8 flex space-x-5 ">
         <div className="flex space-x-6 mt-2">
-        <div><Link to="/">Home</Link></div>
+        <div className="hover:text-white hover:scale-110"><Link to="/">Home</Link></div>
         <div><Link to="/aboutus">About us</Link></div>
         <div><Link to="/contactus">Contact us</Link></div>
         <div><Link to="/ordernow">Order Now</Link></div>
@@ -23,6 +23,12 @@ const Header =()=>{
         
        </div>
        </div>
+       {/* tempory mobile menu */}
+
+       <div className="block md:hidden p-5 font-bold group ">
+       <div className="hover:text-white"><Link to="/">Home</Link></div>
+       </div>
+
        </div>
     )
 }
