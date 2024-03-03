@@ -1,10 +1,15 @@
 import { LOGO_URL } from "../utli/logo_url";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utli/useOnlineStatus";
+import UserContext from "../utli/UserContext";
 
 
 const Header =()=>{
+    const onlineStatus = useOnlineStatus()
+
     const[login,setlogin]=useState("login");
+    const data = useContext(UserContext);
 
     return(
         
@@ -13,14 +18,17 @@ const Header =()=>{
        <div className="hidden md:block">
        <div className="font-sans font-bold  p-8 flex space-x-5 ">
         <div className="flex space-x-6 mt-2">
+        <div>online Status:{onlineStatus?"✅":"🔴"}</div>
         <div className="hover:text-white hover:scale-110"><Link to="/">Home</Link></div>
         <div><Link to="/aboutus">About us</Link></div>
         <div><Link to="/contactus">Contact us</Link></div>
         <div><Link to="/ordernow">Order Now</Link></div>
+        <div><Link to="/grocery">Grocery</Link></div>
+        <div className="text-cyan-500 ">{data.login}</div>
         </div>
          <div className="bg-[#FF6868]  py-2 px-4 rounded-md hover:text-white  hover:scale-105 cursor-pointer"
          onClick={()=>login=== "login"?setlogin("logout"):setlogin("login")}>{login}</div>
-        
+       
        </div>
        </div>
        {/* tempory mobile menu */}

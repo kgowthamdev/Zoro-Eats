@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import RestCards from "./RestCards";
+import RestCards,{FreeDelivery} from "./RestCards";
 import Shimmer from "./Shimmer"
 import { Main_API } from "../utli/logo_url"
 import { Link } from "react-router-dom";
+import UserContext from "../utli/UserContext";
+
 
 
 const Body = () => {
@@ -12,6 +14,9 @@ const Body = () => {
   const [ListData,setListData]=useState([]);
   const [toggleres,settoggleres]=useState('Top Restaurent');
   const[filter,setfilter] = useState([]);
+
+  const{login,setuser}=useContext(UserContext);
+  const HighComp = FreeDelivery(RestCards);
 
 
   useEffect(()=>{
@@ -28,7 +33,6 @@ setfilter(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaur
 
   }
     
- 
 
   return ListData.length===0?(<Shimmer/>):
 
@@ -68,10 +72,37 @@ setfilter(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaur
           {toggleres}
         </button>
       </div>
+
+
+      <div className=" relative flex justify-center items-center mt-16">
+          <input
+            type="text"
+            placeholder="Search Here"
+            value={login}
+            onChange={(e) => setuser(e.target.value)}
+            className="border-2 md:w-[500px] sm:w-[350px] placeholder-gray-200  p-3 "
+          />
+          
+        </div>
+
+
+
       <div className="flex flex-wrap my-10 justify-center items-center">
       {filter.length > 0 ? (
           filter.map((res) => (
-            <Link to={"/cardsitems/"+ res.info.id } key={res.info.id} ><RestCards  resdata={res} /></Link>
+            
+            <Link to={"/cardsitems/"+ res.info.id } key={res.info.id} >
+              
+              {
+             res.info.sla.deliveryTime<30 ? (
+             <HighComp resdata={res}/>):
+              
+              (<RestCards  resdata={res} />)}
+              
+            
+              
+              
+              </Link>
             
           ))
         ) : (

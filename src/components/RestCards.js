@@ -18,8 +18,8 @@ const RestCards =(props)=>
     const deliveryTime = sla?.deliveryTime;
     
     
-    
-  return( <div id="Global_div" className="p-10  ">
+console.log(resdata)    
+  return( <div id="Global_div relative" className="p-10  ">
         <div className="flex flex-col space-y-3 w-[300px] h-52   hover:scale-95 transition duration-150 ease-in-out mt-16 ">
             
         <img src={IMG_URL+ cloudinaryImageId} className=" rounded-xl h-52"></img>
@@ -53,6 +53,20 @@ const RestCards =(props)=>
     </div>
     
     )
+}
+
+export const FreeDelivery = (RestCards)=>{
+    return(props)=>{
+        return(
+            <div className='relative'>
+            
+          
+            <RestCards {...props} />
+            
+            <label className="absolute top-28 rounded-md left-12 bg-[#ECB159] p-1 font-bold  text-white">FREE Delivery</label>
+            </div>
+        )
+    }
 }
 
 export default RestCards;
