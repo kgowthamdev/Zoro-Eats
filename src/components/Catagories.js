@@ -1,7 +1,8 @@
 import ListOfItems from "./ListOfItems";
 
+
 const Catagories =({data,ShowIndex,ShowItem})=>{
-  const[state,setstate]=useState(false);
+  
   const toggle =()=>{
     ShowIndex()
     
